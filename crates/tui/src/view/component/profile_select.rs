@@ -262,7 +262,8 @@ impl From<&Profile> for ProfileListItem {
 }
 
 impl<'a> Generate for &'a ProfileListItem {
-    type Output<'this> = Text<'this>
+    type Output<'this>
+        = Text<'this>
     where
         Self: 'this;
 

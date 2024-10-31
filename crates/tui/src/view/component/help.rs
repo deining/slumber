@@ -23,7 +23,8 @@ const CRATE_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub struct HelpFooter;
 
 impl Generate for HelpFooter {
-    type Output<'this> = Text<'this>
+    type Output<'this>
+        = Text<'this>
     where
         Self: 'this;
 

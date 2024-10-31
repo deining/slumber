@@ -212,7 +212,8 @@ impl ToStringGenerate for RecipeMenuAction {}
 
 /// Render folder as a tree
 impl<'a> Generate for &'a Folder {
-    type Output<'this> = Text<'this>
+    type Output<'this>
+        = Text<'this>
     where
         Self: 'this;
 

@@ -94,7 +94,8 @@ impl<T> Generate for &T
 where
     T: ToStringGenerate,
 {
-    type Output<'this> = Span<'this>
+    type Output<'this>
+        = Span<'this>
     where
         Self: 'this;
 

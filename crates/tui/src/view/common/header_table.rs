@@ -9,7 +9,10 @@ pub struct HeaderTable<'a> {
 }
 
 impl<'a> Generate for HeaderTable<'a> {
-    type Output<'this> = ratatui::widgets::Table<'this> where Self: 'this;
+    type Output<'this>
+        = ratatui::widgets::Table<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where

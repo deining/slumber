@@ -237,7 +237,8 @@ impl PartialEq<RecipeListItem> for RecipeId {
 }
 
 impl<'a> Generate for &'a RecipeListItem {
-    type Output<'this> = Text<'this>
+    type Output<'this>
+        = Text<'this>
     where
         Self: 'this;
 

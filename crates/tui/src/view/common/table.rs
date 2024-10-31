@@ -47,7 +47,8 @@ impl<'a, const COLS: usize, Cll> Generate for Table<'a, COLS, [Cll; COLS]>
 where
     Cll: Into<Cell<'a>>,
 {
-    type Output<'this> = ratatui::widgets::Table<'this>
+    type Output<'this>
+        = ratatui::widgets::Table<'this>
     where
         Self: 'this;
 
@@ -67,7 +68,8 @@ where
 }
 
 impl<'a, const COLS: usize> Generate for Table<'a, COLS, Row<'a>> {
-    type Output<'this> = ratatui::widgets::Table<'this>
+    type Output<'this>
+        = ratatui::widgets::Table<'this>
     where
         Self: 'this;
 
@@ -133,7 +135,8 @@ where
     Cells: IntoIterator,
     Cells::Item: Into<Text<'a>>,
 {
-    type Output<'this> = Row<'this>
+    type Output<'this>
+        = Row<'this>
     where
         Self: 'this;
 

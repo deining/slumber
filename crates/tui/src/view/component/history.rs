@@ -94,7 +94,10 @@ impl Draw for History {
 }
 
 impl Generate for &RequestStateSummary {
-    type Output<'this> = Line<'this> where Self: 'this;
+    type Output<'this>
+        = Line<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where

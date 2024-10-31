@@ -26,7 +26,8 @@ pub struct Button<'a> {
 }
 
 impl<'a> Generate for Button<'a> {
-    type Output<'this> = Span<'this>
+    type Output<'this>
+        = Span<'this>
     where
         Self: 'this;
 

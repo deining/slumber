@@ -37,7 +37,10 @@ pub struct Pane<'a> {
 }
 
 impl<'a> Generate for Pane<'a> {
-    type Output<'this> = Block<'this> where Self: 'this;
+    type Output<'this>
+        = Block<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -87,7 +90,10 @@ impl Generate for String {
 
 impl Generate for &String {
     /// Use `Text` because a string can be multiple lines
-    type Output<'this> = Text<'this> where Self: 'this;
+    type Output<'this>
+        = Text<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -98,7 +104,10 @@ impl Generate for &String {
 }
 
 impl Generate for &Profile {
-    type Output<'this> = Span<'this> where Self: 'this;
+    type Output<'this>
+        = Span<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -109,7 +118,10 @@ impl Generate for &Profile {
 }
 
 impl Generate for &Notification {
-    type Output<'this> = Span<'this> where Self: 'this;
+    type Output<'this>
+        = Span<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -126,7 +138,10 @@ impl Generate for &Notification {
 
 /// Format a timestamp in the local timezone
 impl Generate for DateTime<Utc> {
-    type Output<'this> = Span<'this> where Self: 'this;
+    type Output<'this>
+        = Span<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -149,7 +164,10 @@ impl Generate for Duration {
 }
 
 impl Generate for Option<Duration> {
-    type Output<'this> = Span<'this> where Self: 'this;
+    type Output<'this>
+        = Span<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -164,7 +182,10 @@ impl Generate for Option<Duration> {
 }
 
 impl Generate for StatusCode {
-    type Output<'this> = Span<'this> where Self: 'this;
+    type Output<'this>
+        = Span<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -185,7 +206,10 @@ impl Generate for StatusCode {
 
 /// Not all header values are UTF-8; use a placeholder if not
 impl Generate for &HeaderValue {
-    type Output<'this> = Span<'this> where Self: 'this;
+    type Output<'this>
+        = Span<'this>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -197,7 +221,10 @@ impl Generate for &HeaderValue {
 
 impl Generate for &anyhow::Error {
     /// 'static because string is generated
-    type Output<'this> = Text<'static> where Self: 'this;
+    type Output<'this>
+        = Text<'static>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -226,7 +253,10 @@ impl Generate for &anyhow::Error {
 }
 
 impl Generate for &RequestBuildError {
-    type Output<'this> = Text<'static> where Self: 'this;
+    type Output<'this>
+        = Text<'static>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where
@@ -238,7 +268,10 @@ impl Generate for &RequestBuildError {
 }
 
 impl Generate for &RequestError {
-    type Output<'this> = Text<'static> where Self: 'this;
+    type Output<'this>
+        = Text<'static>
+    where
+        Self: 'this;
 
     fn generate<'this>(self) -> Self::Output<'this>
     where

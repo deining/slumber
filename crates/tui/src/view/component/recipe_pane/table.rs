@@ -205,7 +205,8 @@ struct RowState<K: PersistedKey<Value = bool>> {
 }
 
 impl<K: PersistedKey<Value = bool>> Generate for &RowState<K> {
-    type Output<'this> = Row<'this>
+    type Output<'this>
+        = Row<'this>
     where
         Self: 'this;
 
